@@ -1,59 +1,132 @@
-# Ngxiconic
+# NGX-Iconic
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+A standalone Angular icon component that provides easy access to Material Design icons similar to mat-icon but without Angular Material dependencies.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Standalone Angular component
+- Supports all Material Design icons
+- RTL support with automatic icon flipping
+- Custom icon sizing
+- TypeScript type safety for icon names
+- No Angular Material dependencies
 
+## Installation
+
+```bash
+npm install ngx-iconic
+```
+
+## Demo
+
+To run the demo locally:
+
+1. Clone the repository
+```bash
+git clone https://github.com/strikerh/ngx-iconic.git
+cd ngx-iconic
+```
+
+2. Install dependencies
+```bash 
+npm install
+```
+
+3. Start the demo application
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Open your browser and navigate to `http://localhost:4200`
 
-## Code scaffolding
+## Usage
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Import the module
 
-```bash
-ng generate component component-name
+```typescript
+import { NgxIconicModule } from 'ngx-iconic';
+
+@NgModule({
+  imports: [
+    NgxIconicModule.forRoot({
+      // Optional configuration
+      flipInRtl: true,
+      defaultIcon: 'all_out',
+      iconBasePath: 'assets/icons'
+    })
+  ]
+})
+export class AppModule { }
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Use in templates
 
-```bash
-ng generate --help
+```html
+<!-- Basic usage -->
+<iconic icon="home"></iconic>
+
+<!-- With custom color -->
+<iconic icon="favorite" color="red"></iconic>
+
+<!-- With custom size -->
+<iconic icon="star" class="text-2xl"></iconic>
+
+<!-- Force flip -->
+<iconic icon="arrow_back" [flip]="true"></iconic>
+
+<!-- Different icon type -->
+<iconic icon="check" type="materialIconsOutlined"></iconic>
 ```
 
-## Building
+## Configuration
 
-To build the project run:
+You can configure NGX-Iconic globally using the `forRoot()` method:
 
-```bash
-ng build
+```typescript
+NgxIconicModule.forRoot({
+  flipInRtl: true, // Auto flip icons in RTL mode
+  defaultIcon: 'all_out', // Default icon when none specified
+  iconBasePath: 'assets/icons' // Base path for icon assets
+});
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Available Sizes
 
-## Running unit tests
+The component supports the following size classes:
+- text-xs
+- text-sm
+- text-base
+- text-lg
+- text-xl
+- text-2xl
+- text-3xl
+- text-4xl
+- text-5xl
+- text-6xl
+- text-7xl
+- text-8xl
+- text-9xl
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Icon Types
 
-```bash
-ng test
+Supported icon types:
+- materialIcons (default)
+- materialIconsOutlined
+- materialIconsRound
+- materialIconsSharp
+- materialIconsTwoTone
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+MIT License
+
+## Support
+
+If you find this project useful, please consider giving it a ⭐️ on GitHub!
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This README provides a comprehensive overview of the project while maintaining a professional and clear structure. Let me know if you'd like any modifications or additional sections.
