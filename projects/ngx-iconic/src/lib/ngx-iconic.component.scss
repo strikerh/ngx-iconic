@@ -1,0 +1,139 @@
+:host {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  font-size: inherit;
+  line-height: 1;
+  vertical-align: middle;
+
+  &.flip {
+    transform: scaleX(-1);
+  }
+
+  .ngx-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  ::ng-deep {
+    svg {
+      fill: currentColor;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain;
+    }
+  }
+
+
+  &.text- {
+    &xs {
+      font-size: 0.75rem; /* 12px */
+      line-height: 1rem; /* 16px */
+      width: 1rem;
+      height: 1rem;
+    }
+
+    &sm {
+      --icon-size: 1.25rem;
+      font-size: 0.875rem; /* 14px */
+
+
+    }
+
+    &base {
+      font-size: 1rem; /* 16px */
+      line-height: 1.5rem; /* 24px */
+      width: 1.5rem;
+      height: 1.5rem;
+      --icon-size: 1.5rem;
+    }
+
+    &lg {
+      font-size: 1.125rem; /* 18px */
+      line-height: 1.75rem; /* 28px */
+      width: 1.75rem;
+      height: 1.75rem;
+      --icon-size: 1.75rem;
+    }
+
+    &xl {
+      font-size: 1.25rem; /* 20px */
+      line-height: 1.75rem; /* 28px */
+      width: 1.75rem;
+      height: 1.75rem;
+      --icon-size: 1.75rem;
+    }
+
+    &2xl {
+      font-size: 1.5rem; /* 24px */
+      line-height: 2rem; /* 32px */
+      width: 2rem;
+      height: 2rem;
+      --icon-size: 2rem;
+    }
+
+    &3xl {
+      font-size: 1.875rem; /* 30px */
+      line-height: 2.25rem; /* 36px */
+      width: 2.25rem;
+      height: 2.25rem;
+      --icon-size: 2.25rem;
+    }
+
+    &4xl {
+      font-size: 2.25rem; /* 36px */
+      line-height: 2.5rem; /* 40px */
+      width: 2.5rem;
+      height: 2.5rem;
+      --icon-size: 2.5rem;
+    }
+
+    &5xl {
+      font-size: 3rem; /* 48px */
+      line-height: 1;
+      width: 3rem;
+      height: 3rem;
+      --icon-size: 3rem;
+    }
+
+    &6xl {
+      font-size: 3.75rem; /* 60px */
+      line-height: 1;
+      width: 3.75rem;
+      height: 3.75rem;
+      --icon-size: 3.75rem;
+    }
+
+    &7xl {
+      font-size: 4.5rem; /* 72px */
+      line-height: 1;
+      width: 4.5rem;
+      height: 4.5rem;
+      --icon-size: 4.5rem;
+    }
+
+    &8xl {
+      font-size: 6rem; /* 96px */
+      line-height: 1;
+      width: 6rem;
+      height: 6rem;
+      --icon-size: 6rem;
+
+
+    }
+
+    &9xl {
+      font-size: 8rem; /* 128px */
+      line-height: 1;
+      width: 8rem;
+      height: 8rem;
+      --icon-size: 8rem;
+    }
+  }
+
+
+}

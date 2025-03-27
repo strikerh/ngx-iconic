@@ -1,0 +1,183 @@
+<div class="docs-container">
+  <!-- Header -->
+  <header class="docs-header">
+    <h1>ngx-iconic</h1>
+    <p class="subtitle">A standalone Angular icon component for Material Design icons</p>
+
+    <div class="badges">
+      <img src="https://img.shields.io/npm/v/ngx-iconic" alt="npm version">
+      <img src="https://img.shields.io/npm/l/ngx-iconic" alt="license">
+    </div>
+  </header>
+
+  <!-- Installation -->
+  <section class="docs-section">
+    <h2>Installation</h2>
+
+    <pre><code>npm install ngx-iconic</code></pre>
+
+    <h3>Setup</h3>
+    <pre><code class="language-typescript">
+import &#123; NgxIconicModule &#125; from 'ngx-iconic';
+
+      &#64;NgModule(&#123;
+        imports: [
+        NgxIconicModule.forRoot(&#123;
+      // Optional configuration
+      defaultIcon: 'all_out',
+      iconBasePath: 'assets/icons',
+      flipInRtl: true
+    &#125;)
+  ]
+&#125;)
+      export class AppModule &#123; &#125;</code></pre>
+  </section>
+
+  <!-- Basic Usage -->
+  <section class="docs-section">
+    <h2>Basic Usage</h2>
+
+    <div class="demo-container">
+      <iconic icon="face"></iconic>
+      <iconic icon="favorite" color="red"></iconic>
+      <iconic icon="star" color="#FFD700"></iconic>
+    </div>
+
+    <pre><code class="language-html">
+&lt;iconic icon="face">&lt;/iconic>
+&lt;iconic icon="favorite" color="red">&lt;/iconic>
+&lt;iconic icon="star" color="#FFD700">&lt;/iconic></code></pre>
+  </section>
+
+  <!-- Icon Types -->
+  <section class="docs-section">
+    <h2>Icon Types</h2>
+
+    <div class="demo-container">
+      <iconic icon="home" type="materialIcons"></iconic>
+      <iconic icon="home" type="materialIconsOutlined"></iconic>
+      <iconic icon="home" type="materialIconsRound"></iconic>
+      <iconic icon="home" type="materialIconsSharp"></iconic>
+      <iconic icon="home" type="materialIconsTwoTone"></iconic>
+    </div>
+
+    <pre><code class="language-html">
+&lt;iconic icon="home" type="materialIcons">&lt;/iconic>
+&lt;iconic icon="home" type="materialIconsOutlined">&lt;/iconic>
+&lt;iconic icon="home" type="materialIconsRound">&lt;/iconic>
+&lt;iconic icon="home" type="materialIconsSharp">&lt;/iconic>
+&lt;iconic icon="home" type="materialIconsTwoTone">&lt;/iconic></code></pre>
+  </section>
+
+  <!-- RTL Support -->
+  <section class="docs-section">
+    <h2>RTL Support</h2>
+
+    <div class="demo-container" dir="rtl">
+      <iconic icon="arrow_back"></iconic>
+      <iconic icon="send"></iconic>
+      <iconic icon="trending_flat"></iconic>
+    </div>
+
+    <p>Icons automatically flip in RTL context when <code>flipInRtl</code> is enabled in the configuration.</p>
+  </section>
+
+  <!-- Sizes -->
+  <section class="docs-section">
+    <h2>Icon Sizes</h2>
+
+    <div class="demo-container">
+      <iconic icon="star" class="text-xs"></iconic>
+      <iconic icon="star" class="text-sm"></iconic>
+      <iconic icon="star" class="text-base"></iconic>
+      <iconic icon="star" class="text-lg"></iconic>
+      <iconic icon="star" class="text-xl"></iconic>
+      <iconic icon="star" class="text-2xl"></iconic>
+      <iconic icon="star" class="text-3xl"></iconic>
+    </div>
+
+    <pre><code class="language-html">
+&lt;iconic icon="star" class="text-xs">&lt;/iconic>
+&lt;iconic icon="star" class="text-sm">&lt;/iconic>
+&lt;iconic icon="star" class="text-base">&lt;/iconic>
+&lt;iconic icon="star" class="text-lg">&lt;/iconic>
+&lt;iconic icon="star" class="text-xl">&lt;/iconic>
+&lt;iconic icon="star" class="text-2xl">&lt;/iconic>
+&lt;iconic icon="star" class="text-3xl">&lt;/iconic></code></pre>
+  </section>
+
+  <!-- API Reference -->
+  <section class="docs-section">
+    <h2>API Reference</h2>
+
+    <h3>Inputs</h3>
+    <table class="api-table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>icon</td>
+        <td>IconNames</td>
+        <td>'all_out'</td>
+        <td>Name of the Material Design icon</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>IconTypes</td>
+        <td>'materialIcons'</td>
+        <td>Icon variant style</td>
+      </tr>
+      <tr>
+        <td>flip</td>
+        <td>boolean</td>
+        <td>undefined</td>
+        <td>Manually flip the icon horizontally</td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td>string</td>
+        <td>'currentColor'</td>
+        <td>Icon color (CSS color value)</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <h3>Configuration</h3>
+    <table class="api-table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>defaultIcon</td>
+        <td>string</td>
+        <td>'all_out'</td>
+        <td>Default icon when none specified</td>
+      </tr>
+      <tr>
+        <td>iconBasePath</td>
+        <td>string</td>
+        <td>'assets/icons'</td>
+        <td>Base path for icon assets</td>
+      </tr>
+      <tr>
+        <td>flipInRtl</td>
+        <td>boolean</td>
+        <td>true</td>
+        <td>Auto-flip directional icons in RTL</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
