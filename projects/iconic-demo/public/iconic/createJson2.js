@@ -7,7 +7,7 @@ const rootDir = path.join(__dirname, '/svg');
 const icons_arr = []; //flat array
 const icons2 = {};
 const icons3 = {};
-const icons4 = {};
+
 
 // Mapping for icon types
 const typeMapping = {
@@ -52,6 +52,7 @@ function processFileEntry(fullPath, relativePath, parts) {
   icons3[type][iconName] = relativePath;
 }
 function prepareIconsArray(fullPath, relativePath, parts) {
+
   const type = typeMapping[parts[3]] || parts[3];
   const iconName = parts[2];
   const fileName = parts[4];
@@ -146,3 +147,5 @@ export function getIconPath(name: IconTypes): string | undefined {
 `;
 
 fs.writeFileSync('icons.ts', tsContent);
+fs.writeFileSync('all_icons.json', JSON.stringify(icons_arr));
+

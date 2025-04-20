@@ -45,7 +45,7 @@ export class AppModule { }
 
 ```html
 <iconic icon="home"></iconic>
-<iconic icon="search" type="materialIconsOutlined"></iconic>
+<iconic icon="search" style="materialIconsOutlined"></iconic>
 <iconic icon="favorite" color="#ff0000"></iconic>
 ```
 

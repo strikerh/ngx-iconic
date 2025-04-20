@@ -1,6 +1,6 @@
 {
   "name": "ngx-iconic",
-  "version": "19.1.1",
+  "version": "19.1.2",
   "author": "Zooom (Hazem)",
   "description": "A standalone Angular icon component like mat-icon",
   "keywords": ["angular", "icon", "standalone", "component"],

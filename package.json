@@ -3,9 +3,13 @@
   "version": "0.0.1",
   "author": "Zooom (Hazem)",
   "description": "A standalone Angular icon component like mat-icon",
-  "keywords": ["angular", "icon", "standalone", "component"],
+  "keywords": [
+    "angular",
+    "icon",
+    "standalone",
+    "component"
+  ],
   "license": "MIT",
-
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
