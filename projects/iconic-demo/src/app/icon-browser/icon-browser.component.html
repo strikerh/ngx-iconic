@@ -1,0 +1,19 @@
+<section class="docs-section">
+  <h2>Icon Browser</h2>
+
+  <div class="filters">
+    <input type="text" placeholder="Search icons..." [(ngModel)]="searchTerm" (input)="filterIcons()">
+
+    <select [(ngModel)]="selectedStyle">
+      <option *ngFor="let style of iconStyles" [value]="style">{{style}}</option>
+    </select>
+  </div>
+
+  <div class="icon-grid">
+    <button  (click)="copyCode(iconName)" *ngFor="let iconName of filteredIcons" class="icon-item">
+      <iconic [icon]="iconName" [iconStyle]="selectedStyle" class="text-2xl"></iconic>
+      <span class="icon-name">{{iconName}}</span>
+
+    </button>
+  </div>
+</section>
