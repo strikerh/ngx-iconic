@@ -5,8 +5,13 @@
     <p class="subtitle">A standalone Angular icon component for Material Design icons</p>
 
     <div class="badges">
-      <img src="https://img.shields.io/npm/v/ngx-iconic" alt="npm version">
       <img src="https://img.shields.io/npm/l/ngx-iconic" alt="license">
+      <a href="https://www.npmjs.com/package/ngx-iconic" target="_blank">
+      <img src="https://img.shields.io/npm/v/ngx-iconic" alt="npm version">
+      </a>
+      <a href="https://github.com/strikerh/ngx-iconic#" target="_blank">
+        <img src="https://img.shields.io/badge/GitHub-Repository-blue" alt="GitHub Repository">
+      </a>
     </div>
   </header>
 
@@ -38,17 +43,31 @@ import &#123; NgxIconicModule &#125; from 'ngx-iconic';
     <h2>Basic Usage</h2>
 
     <div class="demo-container">
-      <iconic icon="face"></iconic>
-      <iconic icon="favorite" color="red"></iconic>
-      <iconic icon="star" color="#FFD700"></iconic>
-      <iconic >mat_outline face</iconic>
-      <iconic >mat_solid face</iconic>
+      <iconic  icon="face" class="text-xl"></iconic>
+      <iconic icon="favorite"  color="red"  class="text-xl"></iconic>
+      <iconic icon="star" color="#FFD700"  class="text-xl"></iconic>
+      <iconic  class="text-xl">mat_twoTone home </iconic>
+      <iconic  class="text-xl" icon="home">mat_twoTone face face</iconic>
     </div>
 
     <pre><code class="language-html">
 &lt;iconic icon="face">&lt;/iconic>
-&lt;iconic icon="favorite" color="red">&lt;/iconic>
-&lt;iconic icon="star" color="#FFD700">&lt;/iconic></code></pre>
+&lt;iconic  icon="face" class="text-xl">&lt;/iconic>
+&lt;iconic icon="favorite"  color="red"  class="text-xl">&lt;/iconic>
+&lt;iconic icon="star" color="#FFD700"  class="text-xl">&lt;/iconic>
+&lt;iconic  class="text-xl">mat_twoTone home &lt;/iconic>
+&lt;iconic  class="text-xl" icon="home">mat_twoTone face face&lt;/iconic> // Priority to the icon property
+    </code></pre>
+
+    <div class="note">
+      <p><strong>Note on Content Projection:</strong> You can use content projection to define both icon style and name.
+      The format is <code>&lt;iconic>STYLE_ALIAS ICON_NAME&lt;/iconic></code> where STYLE_ALIAS is one of the supported style aliases
+      and ICON_NAME is the Material icon name.</p>
+
+      <p><strong>Priority Rules:</strong> When both content projection and properties are used, the component properties
+      take priority. For example, if you specify <code>icon="home"</code> in the property and
+      <code>mat_twoTone face</code> in content, "home" will be used as the icon name.</p>
+    </div>
   </section>
 
   <!-- Icon Types -->
@@ -56,19 +75,53 @@ import &#123; NgxIconicModule &#125; from 'ngx-iconic';
     <h2>Icon Types</h2>
 
     <div class="demo-container">
-      <iconic icon="home" type="materialIcons"></iconic>
-      <iconic icon="home" type="materialIconsOutlined"></iconic>
-      <iconic icon="home" type="materialIconsRound"></iconic>
-      <iconic icon="home" type="materialIconsSharp"></iconic>
-      <iconic icon="home" type="materialIconsTwoTone"></iconic>
+      <iconic class="text-2xl" icon="home" iconStyle="materialIcons"></iconic>
+      <iconic class="text-2xl" icon="home" iconStyle="materialIconsOutlined"></iconic>
+      <iconic class="text-2xl" icon="home" iconStyle="materialIconsRound"></iconic>
+      <iconic class="text-2xl" icon="home" iconStyle="materialIconsSharp"></iconic>
+      <iconic class="text-2xl" icon="home" iconStyle="materialIconsTwoTone"></iconic>
     </div>
 
     <pre><code class="language-html">
-&lt;iconic icon="home" type="materialIcons">&lt;/iconic>
-&lt;iconic icon="home" type="materialIconsOutlined">&lt;/iconic>
-&lt;iconic icon="home" type="materialIconsRound">&lt;/iconic>
-&lt;iconic icon="home" type="materialIconsSharp">&lt;/iconic>
-&lt;iconic icon="home" type="materialIconsTwoTone">&lt;/iconic></code></pre>
+&lt;iconic icon="home" iconStyle="materialIcons">&lt;/iconic>
+&lt;iconic icon="home" iconStyle="materialIconsOutlined">&lt;/iconic>
+&lt;iconic icon="home" iconStyle="materialIconsRound">&lt;/iconic>
+&lt;iconic icon="home" iconStyle="materialIconsSharp">&lt;/iconic>
+&lt;iconic icon="home" iconStyle="materialIconsTwoTone">&lt;/iconic></code></pre>
+
+    <h3>Style Aliases</h3>
+    <p>You can use these aliases in content projection or as values for the iconStyle property:</p>
+
+    <table class="api-table">
+      <thead>
+        <tr>
+          <th>Icon Style</th>
+          <th>Aliases</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>materialIcons</td>
+          <td>mi, mif, miFill, mi_fill, mat_fill</td>
+        </tr>
+        <tr>
+          <td>materialIconsOutlined</td>
+          <td>mio, miOutlined, mi_outlined, mat_outlined, mat_outline</td>
+        </tr>
+        <tr>
+          <td>materialIconsRound</td>
+          <td>mir, miRound, mi_round, mat_round</td>
+        </tr>
+        <tr>
+          <td>materialIconsSharp</td>
+          <td>mis, miSharp, mi_sharp, mat_sharp</td>
+        </tr>
+        <tr>
+          <td>materialIconsTwoTone</td>
+          <td>mit, miTwoTone, mi_twoTone, mat_twoTone</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <!-- RTL Support -->
@@ -94,8 +147,18 @@ import &#123; NgxIconicModule &#125; from 'ngx-iconic';
       <iconic icon="star" class="text-base"></iconic>
       <iconic icon="star" class="text-lg"></iconic>
       <iconic icon="star" class="text-xl"></iconic>
-      <iconic icon="star" class="text-2xl"></iconic>
-      <iconic icon="star" class="text-3xl"></iconic>
+      <iconic icon="star" size="2xl"></iconic>
+      <iconic icon="star" size="3xl"></iconic>
+      <iconic icon="star" size="4xl"></iconic>
+      <iconic icon="star" size="5xl"></iconic>
+    </div>
+
+    <p>Larger sizes are also available:</p>
+    <div class="demo-container">
+      <iconic icon="star" size="6xl"></iconic>
+      <iconic icon="star" size="7xl"></iconic>
+      <iconic icon="star" size="8xl"></iconic>
+      <iconic icon="star" size="9xl"></iconic>
     </div>
 
     <pre><code class="language-html">
@@ -104,8 +167,33 @@ import &#123; NgxIconicModule &#125; from 'ngx-iconic';
 &lt;iconic icon="star" class="text-base">&lt;/iconic>
 &lt;iconic icon="star" class="text-lg">&lt;/iconic>
 &lt;iconic icon="star" class="text-xl">&lt;/iconic>
-&lt;iconic icon="star" class="text-2xl">&lt;/iconic>
-&lt;iconic icon="star" class="text-3xl">&lt;/iconic></code></pre>
+&lt;iconic icon="star" size="2xl">&lt;/iconic> // you can use the text size classes or the size property
+&lt;iconic icon="star" size="3xl">&lt;/iconic>
+&lt;iconic icon="star" size="4xl">&lt;/iconic>
+&lt;iconic icon="star" size="5xl">&lt;/iconic>
+&lt;iconic icon="star" size="6xl">&lt;/iconic>
+&lt;iconic icon="star" size="7xl">&lt;/iconic>
+&lt;iconic icon="star" size="8xl">&lt;/iconic>
+&lt;iconic icon="star" size="9xl">&lt;/iconic>
+    </code></pre>
+
+    <h3>Available Size Classes</h3>
+    <p>You can set the icon size using either the <code>size</code> property or by adding one of these CSS classes:</p>
+    <ul class="size-list">
+      <li><code>text-xs</code> - Extra small (0.75rem)</li>
+      <li><code>text-sm</code> - Small (0.875rem)</li>
+      <li><code>text-base</code> - Base (1rem)</li>
+      <li><code>text-lg</code> - Large (1.125rem)</li>
+      <li><code>text-xl</code> - Extra large (1.25rem)</li>
+      <li><code>text-2xl</code> - 2X large (1.5rem)</li>
+      <li><code>text-3xl</code> - 3X large (1.875rem)</li>
+      <li><code>text-4xl</code> - 4X large (2.25rem)</li>
+      <li><code>text-5xl</code> - 5X large (3rem)</li>
+      <li><code>text-6xl</code> - 6X large (3.75rem)</li>
+      <li><code>text-7xl</code> - 7X large (4.5rem)</li>
+      <li><code>text-8xl</code> - 8X large (6rem)</li>
+      <li><code>text-9xl</code> - 9X large (8rem)</li>
+    </ul>
   </section>
 
   <!-- API Reference -->
@@ -130,8 +218,8 @@ import &#123; NgxIconicModule &#125; from 'ngx-iconic';
         <td>Name of the Material Design icon</td>
       </tr>
       <tr>
-        <td>type</td>
-        <td>IconTypes</td>
+        <td>iconStyle</td>
+        <td>IconStyle</td>
         <td>'materialIcons'</td>
         <td>Icon variant style</td>
       </tr>
@@ -146,6 +234,12 @@ import &#123; NgxIconicModule &#125; from 'ngx-iconic';
         <td>string</td>
         <td>'currentColor'</td>
         <td>Icon color (CSS color value)</td>
+      </tr>
+      <tr>
+        <td>size</td>
+        <td>IconSizes</td>
+        <td>undefined</td>
+        <td>Icon size from xs to 9xl</td>
       </tr>
       </tbody>
     </table>

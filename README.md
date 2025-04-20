@@ -75,7 +75,7 @@ export class AppModule { }
 <iconic icon="arrow_back" [flip]="true"></iconic>
 
 <!-- Different icon type -->
-<iconic icon="check" style="materialIconsOutlined"></iconic>
+<iconic icon="check" iconStyle="materialIconsOutlined"></iconic>
 ```
 
 ## Configuration

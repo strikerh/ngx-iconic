@@ -23,9 +23,9 @@ export class NgxIconicService {
 
   // iconBasePath = '/iconic/svg/';
   iconBasePath = 'https://fonts.gstatic.com/s/i';
- @Optional() @Inject(NGX_ICONIC_CONFIG) public config: NgxIconicConfig = {
-  iconBasePath: '/iconic/svg'
-};
+  @Optional() @Inject(NGX_ICONIC_CONFIG) public config: NgxIconicConfig = {
+    iconBasePath: '/iconic/svg'
+  };
 
   constructor() {
   }
@@ -33,16 +33,16 @@ export class NgxIconicService {
   getIconPath(name: IconNames, type: IconStyle = 'materialIcons', online: boolean = false): string {
     // `http://localhost:4200/iconic/svg/av/5k/materialicons/24px.svg`
     // https://fonts.gstatic.com/s/i/materialicons/<icon-name>/v1/24px.svg
-    if (false) {
-      return `${this.iconBasePath}/${type.toLowerCase()}/${name}/v1/24px.svg`;
+
+    // return `${this.iconBasePath}/${type.toLowerCase()}/${name}/v1/24px.svg`;
+
+    const iconMeta = this.getIconMeta(name, type);
+    if (online) {
+      return `${iconMeta.onlinePath}`;
     } else {
-      const iconMeta = this.getIconMeta(name, type);
-      if (online) {
-        return `${iconMeta.onlinePath}`;
-      } else {
-        return `${this.config.iconBasePath}/${iconMeta.localPath}`;
-      }
+      return `${this.config.iconBasePath}/${iconMeta.localPath}`;
     }
+
   }
 
   getIconMeta(name: IconNames, styleOverride?: IconStyle, size = 24): IconMeta {
@@ -58,7 +58,6 @@ export class NgxIconicService {
       value.includes(styleOverride || 'materialIcons')
     );
     const style: IconStyle = foundTypeEntry ? foundTypeEntry[1] as IconStyle : 'materialIcons';
-    debugger
     const category = allIconsShort.categories[+catIdxStr];
     const version = +versionStr;
     return {
